@@ -1,0 +1,174 @@
+/* VenueSection.css - Royal Location & Map Styles */
+.venue-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.venue-header {
+  margin-bottom: 1rem;
+}
+
+.venue-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  color: #35210c;
+  margin: 0.4rem 0 0.2rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.venue-subtitle {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  color: #6d502d;
+  font-style: italic;
+}
+
+.venue-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0.8rem 0.5rem;
+  box-shadow: none;
+  position: relative;
+}
+
+.venue-icon-wrap {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 0.6rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.2), rgba(240, 208, 128, 0.4));
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.25);
+}
+
+.venue-name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 3.2vw, 1.25rem);
+  color: #2e1a06;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.venue-address {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: #4b361d;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.venue-landmark {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.88rem;
+  color: #7b5b2a;
+  margin-bottom: 0.9rem;
+}
+
+.venue-amenities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-bottom: 1.2rem;
+}
+
+.amenity-pill {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #63471e;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+}
+
+/* Map Frame Wrapper */
+.map-frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  box-shadow:
+    0 6px 20px rgba(60, 40, 10, 0.15),
+    0 0 0 1px rgba(201, 168, 76, 0.4);
+}
+
+.venue-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: contrast(102%) saturate(95%);
+}
+
+.map-gold-frame {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(201, 168, 76, 0.5);
+  border-radius: 12px;
+  pointer-events: none;
+  box-shadow: inset 0 0 15px rgba(201, 168, 76, 0.15);
+}
+
+/* Venue Action Buttons */
+.venue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.venue-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #c9a84c 0%, #8b6914 100%);
+  color: #fffef8;
+  box-shadow: 0 4px 14px rgba(139, 105, 20, 0.35);
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #deb752 0%, #9c7517 100%);
+  box-shadow: 0 6px 18px rgba(139, 105, 20, 0.5);
+}
+
+.secondary-btn {
+  background: rgba(201, 168, 76, 0.12);
+  color: #674b1e;
+  border: 1px solid rgba(201, 168, 76, 0.45);
+}
+
+.secondary-btn:hover {
+  background: rgba(201, 168, 76, 0.22);
+  border-color: #8b6914;
+  color: #3b2807;
+}
+
+.secondary-btn.copied {
+  background: #2e7d32;
+  color: #ffffff;
+  border-color: #2e7d32;
+}

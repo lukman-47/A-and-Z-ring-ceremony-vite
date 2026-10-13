@@ -1,0 +1,350 @@
+/* ScratchCard.css - Royal Red-Gold Scratch Card */
+.scratch-section {
+  margin: 1.8rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.scratch-header {
+  margin-bottom: 0.9rem;
+}
+
+.royal-badge.red-gold-badge {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: #7a1512;
+  background: linear-gradient(135deg, rgba(200, 45, 30, 0.15), rgba(240, 180, 80, 0.3));
+  border: 1px solid rgba(180, 40, 25, 0.45);
+  padding: 0.25rem 0.9rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(180, 40, 25, 0.15);
+}
+
+.scratch-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+  color: #35100e;
+  margin: 0.4rem 0 0.2rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.scratch-hint {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.92rem;
+  color: #6d241e;
+  font-style: italic;
+}
+
+/* Scratch Wrapper - Red-Gold border & shadows */
+.scratch-wrapper.red-gold-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 240px;
+  margin: 0.6rem auto;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 30px rgba(120, 20, 15, 0.22),
+    0 0 0 1.5px rgba(200, 50, 30, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.scratch-wrapper.red-gold-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 40px rgba(140, 25, 18, 0.3),
+    0 0 0 2px rgba(230, 80, 40, 0.7);
+}
+
+/* UNDERNEATH: Revealed Date Content */
+.revealed-date-content {
+  background: radial-gradient(circle at 50% 30%, #fffefb 0%, #fcf3e6 65%, #fae8d4 100%);
+  border: 2px solid rgba(180, 40, 25, 0.4);
+  border-radius: 14px;
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 240px;
+  position: relative;
+}
+
+.card-filigree {
+  color: #a3281c;
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 1px 2px rgba(180, 40, 25, 0.3);
+}
+
+.save-the-date-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: #8c1e16;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.revealed-date-highlight {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 4.5vw, 1.85rem);
+  font-weight: 700;
+  color: #2b0c09;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.3rem;
+}
+
+.revealed-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(180, 40, 25, 0.12);
+  border: 1px solid rgba(180, 40, 25, 0.35);
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5a140f;
+  margin-bottom: 0.8rem;
+}
+
+/* Countdown */
+.countdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 0.4rem 0 0.9rem;
+}
+
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffffff, #fdf0e4);
+  border: 1px solid rgba(180, 40, 25, 0.35);
+  border-radius: 8px;
+  min-width: 52px;
+  padding: 0.4rem 0.3rem;
+  box-shadow: 0 3px 8px rgba(100, 20, 15, 0.08);
+}
+
+.cd-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #8c1a14;
+  line-height: 1;
+}
+
+.cd-lbl {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: #6d201b;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.cd-sep {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #ad3226;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.add-calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #c43822 0%, #871612 100%);
+  color: #fffdf7;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 14px rgba(135, 22, 18, 0.4);
+  transition: all 0.25s ease;
+}
+
+.add-calendar-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #db4c34 0%, #9e1d18 100%);
+  box-shadow: 0 6px 18px rgba(135, 22, 18, 0.55);
+}
+
+/* OVERLAY Canvas */
+.scratch-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+  z-index: 5;
+  transition: opacity 0.6s ease;
+}
+
+.scratch-canvas:active {
+  cursor: grabbing;
+}
+
+.scratch-canvas.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Gold/Ruby Particles Container */
+.sparkles-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 8;
+  overflow: hidden;
+}
+
+.gold-particle {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 140, 80, 0.8);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Progress & Quick Reveal */
+.scratch-controls {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scratch-progress-bar {
+  width: 180px;
+  height: 4px;
+  background: rgba(180, 40, 25, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.scratch-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c43822, #f5a045, #ffd274);
+  transition: width 0.2s ease;
+}
+
+.quick-reveal-btn {
+  background: transparent;
+  border: 1px solid rgba(180, 40, 25, 0.5);
+  color: #7a1512;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.quick-reveal-btn:hover {
+  background: rgba(180, 40, 25, 0.15);
+  border-color: #b82a1d;
+  color: #4a0c09;
+}
+
+/* ── Scratch Corner Hint ── */
+.scratch-corner-hint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 9;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Peeled corner triangle – mimics a foil corner being lifted */
+.scratch-hint-peeled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 52px 52px 0 0;
+  border-color: rgba(255, 245, 210, 0.88) transparent transparent transparent;
+  filter: drop-shadow(2px 2px 4px rgba(120, 40, 10, 0.35));
+  animation: peelPulse 2.2s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+@keyframes peelPulse {
+  0%, 100% {
+    border-width: 44px 44px 0 0;
+    opacity: 0.85;
+  }
+  50% {
+    border-width: 58px 58px 0 0;
+    opacity: 1;
+  }
+}
+
+/* Animated finger emoji */
+.scratch-hint-finger {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  font-size: 1.1rem;
+  animation: fingerScratch 2.2s ease-in-out infinite;
+  transform-origin: bottom center;
+  z-index: 10;
+  line-height: 1;
+}
+
+@keyframes fingerScratch {
+  0%, 100% { transform: translate(0, 0) rotate(-20deg); }
+  30%       { transform: translate(8px, 8px) rotate(0deg); }
+  60%       { transform: translate(4px, 4px) rotate(-10deg); }
+}
+
+/* "Scratch here" label */
+.scratch-hint-label {
+  position: absolute;
+  top: 54px;
+  left: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #5c1008;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  animation: labelFade 2.2s ease-in-out infinite;
+}
+
+@keyframes labelFade {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}

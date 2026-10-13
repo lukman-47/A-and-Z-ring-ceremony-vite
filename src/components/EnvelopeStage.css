@@ -1,0 +1,402 @@
+/* EnvelopeStage.css - Royal Wax Seal & Envelope Stage */
+.env-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #261505 0%, #0d0602 70%, #050201 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s;
+  padding: 0.8rem;
+  overflow: hidden;
+}
+
+.env-stage.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.env-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 98vh;
+}
+
+/* Royal Header above envelope */
+.env-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  animation: fadeInDown 1s ease both;
+}
+
+.env-royal-sub {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.7rem, 2vw, 0.82rem);
+  letter-spacing: 0.32em;
+  color: #d4b96a;
+  text-shadow: 0 0 10px rgba(212, 185, 106, 0.4);
+  text-transform: uppercase;
+}
+
+.env-guest-tag {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.7rem, 2vw, 0.82rem);
+  letter-spacing: 0.22em;
+  color: #d4b96a;
+  text-transform: uppercase;
+  margin: 0 0 0.1rem;
+}
+
+.env-guest-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05em;
+  font-weight: 700;
+  color: #fff1b8;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  text-shadow: 0 0 12px rgba(212, 185, 106, 0.6);
+}
+
+.env-royal-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: #f7e3a3;
+  margin: 0.1rem 0;
+  text-shadow: 0 2px 14px rgba(201, 168, 76, 0.7);
+  letter-spacing: 0.04em;
+}
+
+.env-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 140px;
+  margin: 0 auto;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.6), transparent);
+}
+
+.divider-symbol {
+  color: #c9a84c;
+  font-size: 0.9rem;
+}
+
+/* Envelope Image Wrapper */
+.env-img-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow:
+    0 0 50px rgba(201, 168, 76, 0.3),
+    0 25px 60px rgba(0, 0, 0, 0.85);
+  animation: floatEnvelope 4s ease-in-out infinite;
+  transition: transform 0.4s ease;
+}
+
+@keyframes floatEnvelope {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.env-frame-img {
+  max-width: min(390px, 88vw);
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Canvas shares same sizing as static img */
+.env-canvas {
+  max-width: min(390px, 88vw);
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Wax Seal Hotspot Button */
+.seal-hotspot-btn {
+  position: absolute;
+  left: 50.3%;
+  top: 51.3%;
+  transform: translate(-50%, -50%);
+  width: 28%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 215, 60, 0.02);
+  cursor: pointer;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.seal-hotspot-btn:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.seal-hotspot-btn:active {
+  transform: translate(-50%, -50%) scale(0.94);
+}
+
+/* Shimmering Aura Rings */
+.seal-aura-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 220, 90, 0.7);
+  box-shadow:
+    0 0 16px rgba(255, 215, 60, 0.8),
+    inset 0 0 12px rgba(255, 215, 60, 0.4);
+  animation: sealRingPulse 2.4s ease-in-out infinite;
+}
+
+.seal-aura-ring.ring-dashed {
+  inset: -14px;
+  border: 1.5px dashed rgba(201, 168, 76, 0.6);
+  box-shadow: none;
+  animation: sealRotate 16s linear infinite;
+}
+
+.seal-pulse-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 60, 0.4) 0%, transparent 70%);
+  animation: sealGlowBreath 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Floating Sparkle Glints */
+.seal-sparkle {
+  position: absolute;
+  color: #fff8d6;
+  font-size: 0.9rem;
+  pointer-events: none;
+  text-shadow: 0 0 8px rgba(255, 220, 80, 1);
+  animation: sparkleTwinkle 2s ease-in-out infinite;
+}
+
+.seal-sparkle.sp1 {
+  top: -8px;
+  right: 6px;
+  animation-delay: 0s;
+}
+
+.seal-sparkle.sp2 {
+  bottom: -6px;
+  left: 8px;
+  font-size: 0.75rem;
+  animation-delay: 0.7s;
+}
+
+.seal-sparkle.sp3 {
+  top: 45%;
+  left: -12px;
+  font-size: 0.8rem;
+  animation-delay: 1.3s;
+}
+
+/* Flash burst when clicked */
+.seal-burst-flash {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: radial-gradient(circle at 50% 51%, rgba(255, 245, 200, 0.85) 0%, rgba(201, 168, 76, 0.4) 50%, transparent 80%);
+  pointer-events: none;
+  animation: burstFade 0.6s ease-out forwards;
+}
+
+@keyframes burstFade {
+  0% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+/* Hint Pill below envelope */
+.env-footer {
+  margin-top: 0.8rem;
+  cursor: pointer;
+  animation: fadeInUp 1s ease both 0.3s;
+}
+
+.seal-hint-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.25), rgba(70, 45, 10, 0.6));
+  border: 1px solid rgba(255, 220, 100, 0.5);
+  padding: 0.4rem 1.1rem;
+  border-radius: 25px;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    0 0 18px rgba(201, 168, 76, 0.3);
+  transition: transform 0.25s ease, background 0.25s ease;
+  animation: pillBounce 2.5s ease-in-out infinite;
+}
+
+.seal-hint-pill:hover {
+  transform: translateY(-2px) scale(1.04);
+  border-color: #ffd73c;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.4), rgba(70, 45, 10, 0.8));
+}
+
+.seal-hand-icon {
+  font-size: 1rem;
+  animation: handTap 1.4s ease-in-out infinite;
+}
+
+.seal-hint-text {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: #fff0ba;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.seal-sparkle-mini {
+  font-size: 0.85rem;
+}
+
+/* Keyframe animations */
+@keyframes sealRingPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 1;
+    box-shadow:
+      0 0 24px rgba(255, 225, 90, 1),
+      inset 0 0 16px rgba(255, 225, 90, 0.6);
+  }
+}
+
+@keyframes sealRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sealGlowBreath {
+  0%, 100% {
+    transform: scale(0.95);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes pillBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes handTap {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Auto-open countdown badge on seal ── */
+.seal-auto-countdown {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 5, 1, 0.82);
+  border: 1px solid rgba(212, 185, 106, 0.6);
+  color: #f7e3a3;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.65rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: countdownPulse 1s ease-in-out infinite;
+}
+
+@keyframes countdownPulse {
+  0%, 100% { opacity: 0.75; transform: translateX(-50%) scale(1); }
+  50%       { opacity: 1;    transform: translateX(-50%) scale(1.06); }
+}
