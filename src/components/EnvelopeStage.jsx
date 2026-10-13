@@ -163,15 +163,7 @@ export default function EnvelopeStage({ scene, guestName, onSealClick, onDone })
         {/* Header — only while waiting */}
         {scene === 'waiting' && (
           <div className="env-header">
-            {guestName ? (
-              <p className="env-guest-tag">
-                Warmly Invited: <span className="env-guest-name">{guestName}</span>
-              </p>
-            ) : (
-              <p className="env-guest-tag">
-                Invitation from <span className="env-guest-name">Badruddin &amp; Family</span>
-              </p>
-            )}
+
             <h2 className="env-royal-names">Ayesha &amp; Zaid</h2>
             <div className="env-divider">
               <span className="divider-line" />
